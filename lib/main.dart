@@ -16,19 +16,75 @@ class MyApp extends StatelessWidget {
           title: const Text('Flutter layout demo'),
         ),
         body: Column(
-          children: [
+          children:const [
             TitleRow(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ButtonColumn1(),
-                ButtonColumn2(),
-                ButtonColumn3(),
-              ],
-            ),
+            ButtonRow(),
+            TextSection()
           ],
         ),
       ),
+    );
+  }
+}
+
+class TextSection extends StatelessWidget {
+  const TextSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(32),
+      child: TextRow(),
+    );
+  }
+}
+
+class TextRow extends StatelessWidget {
+  const TextRow({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
+      'Alps. Situated 1,578 meters above sea level, it is one of the '
+      'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+      'half-hour walk through pastures and pine forest, leads you to the '
+      'lake, which warms to 20 degrees Celsius in the summer. Activities '
+      'enjoyed here include rowing, and riding the summer toboggan run.',
+      softWrap: true,
+    );
+  }
+}
+
+class ButtonRow extends StatelessWidget {
+  const ButtonRow({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Buttonrow();
+  }
+}
+
+class Buttonrow extends StatelessWidget {
+  const Buttonrow({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        ButtonColumn1(),
+        ButtonColumn2(),
+        ButtonColumn3(),
+      ],
     );
   }
 }
